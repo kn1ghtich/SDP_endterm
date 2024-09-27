@@ -25,9 +25,15 @@ public class Main {
         db2.disconnect();
 
         if (db1.equals(null)) {
-            System.out.println("Disconnected");
+            System.out.println("db1 is isconnected");
         } else {
-            System.out.println("Somewhere is mistake and disconneted is not done");
+            System.out.println("Somewhere is mistake and db1 disconneted is not done");
+        }
+
+        if (db1.equals(null)) {
+            System.out.println("db2 is isconnected");
+        } else {
+            System.out.println("Somewhere is mistake and db2 disconneted is not done");
         }
 
 
