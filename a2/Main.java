@@ -21,21 +21,20 @@ public class Main {
 
 
 
-        db1.disconnect();
-        db2.disconnect();
+        db1 = DatabaseConnection.disconnect();
+        db2 = DatabaseConnection.disconnect();
 
-        if (db1.equals(null)) {
+        if (db1 == null) {
             System.out.println("db1 is isconnected");
         } else {
             System.out.println("Somewhere is mistake and db1 disconneted is not done");
         }
 
-        if (db1.equals(null)) {
+        if (db2 == null) {
             System.out.println("db2 is isconnected");
         } else {
             System.out.println("Somewhere is mistake and db2 disconneted is not done");
         }
-
 
     }
 }

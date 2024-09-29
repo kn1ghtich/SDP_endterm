@@ -2,7 +2,7 @@ package a2;
 
 public class DatabaseConnection {
 
-    // Static volatole field to hold the instance of DatabaseConnection
+    // Static volatile field to hold the instance of DatabaseConnection
     private static volatile DatabaseConnection instance;
 
     // Private constructor that is called only with method getInstance
@@ -29,16 +29,11 @@ public class DatabaseConnection {
     }
 
     // Method to simulate disconnecting from the database
-    public DatabaseConnection disconnect() {
+    public static DatabaseConnection disconnect() {
         System.out.println("Disconnected from the database");
         return null;
     }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj == null;
-    }
 
 }
 
