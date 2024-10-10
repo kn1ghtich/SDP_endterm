@@ -13,6 +13,7 @@ class ProductCatalog {
         products.put("Headphones", 150.00);
     }
 
+    // returns price of the product
     public Double getProductPrice(String productName) throws NullPointerException {
         return products.get(productName);
     }

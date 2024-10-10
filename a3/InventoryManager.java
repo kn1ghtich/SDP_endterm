@@ -16,6 +16,7 @@ class InventoryManager {
     }
 
 
+    // it will throw exception if required quantity is more than real quantity of products
     public void reduceStock(String productName, int productQuantity) throws NotEnoughProductException {
         int stockQuantity = stock.get(productName);
 

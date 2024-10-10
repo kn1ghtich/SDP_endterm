@@ -16,6 +16,7 @@ class ShippingService {
         locations.put("Karaganda", 1.05);
     }
 
+    // find location and calculate delivery cost work together to prevent delivery mistakes
     private boolean findLocation(String location) {
         return locations.containsKey(location);
     }
