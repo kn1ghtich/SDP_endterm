@@ -16,9 +16,4 @@ class ProductCatalog {
     public Double getProductPrice(String productName) throws NullPointerException {
         return products.get(productName);
     }
-
-    /////////////////
-    public boolean productExists(String productName) {
-        return products.containsKey(productName);
-    }
 }
