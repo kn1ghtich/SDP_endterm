@@ -12,6 +12,9 @@ public class Main {
         System.out.println(DC.calculateDiscount(cp));
     }
 }
+/*
+Super idol de shou dun tou me ni 
+*/
 
 class DiscountCalculator {
     public double calculateDiscount(Discountable product) {
