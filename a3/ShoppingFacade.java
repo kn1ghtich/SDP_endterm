@@ -1,4 +1,7 @@
 package a3;
+
+import java.util.Scanner;
+
 class ShoppingFacade {
     private ProductCatalog productCatalog;
     private PaymentProcessor paymentProcessor;
@@ -12,37 +15,62 @@ class ShoppingFacade {
         shippingService = new ShippingService();
     }
 
-    public void placeOrder(String productName, String paymentType, String location) {
-        System.out.println("\nPlacing order for: " + productName);
 
-        // Step 1: Check if product exists
-        if (!productCatalog.productExists(productName)) {
-            System.out.println("Product not found in catalog.");
-            return;
+    public void placeOrder() {
+        Scanner scanner = new Scanner(System.in);
+        String productName;
+        int productQuantity;
+        Double cash = 2000.0;
+        double price;
+        double deliveryCost;
+        double totalPrice;
+
+        System.out.print("Welcome to the Shopping Facade! Do you want to buy something?(By default you have 2000 points): ");
+        String choice = scanner.nextLine();
+
+        while (choice.equalsIgnoreCase("yes")) {
+            try {
+                System.out.print("Enter your location: ");
+                String location = scanner.nextLine();
+                deliveryCost = shippingService.calculateDeliveryCost(location);
+
+                System.out.print("What do you want to buy?: ");
+                productName = scanner.nextLine();
+                price = productCatalog.getProductPrice(productName);
+
+                System.out.print("How much do you want to buy?: ");
+                productQuantity = Integer.parseInt(scanner.nextLine());
+
+                paymentProcessor.processPayment(cash, price, productQuantity, deliveryCost);
+                totalPrice = price * productQuantity * deliveryCost;
+                System.out.println("It will cost: " + totalPrice);
+                System.out.print("Do you want to continue? (yes/no): ");
+                choice = scanner.nextLine();
+                if (choice.equalsIgnoreCase("no")) {
+                    continue;
+                }
+
+
+                inventoryManager.reduceStock(productName, productQuantity);
+                cash = cash - price * productQuantity * deliveryCost;
+                System.out.println("Thank you for buying " + productName + "!\nNow you have: " + cash);
+
+                System.out.print("Do you want to continue? (yes/no): ");
+                choice = scanner.nextLine();
+                if (choice.equalsIgnoreCase("no")) {
+                    break;
+                }
+            } catch (NullPointerException e) {
+                System.out.println("No such product found.");
+            } catch (NotEnoughProductException e) {
+                System.out.println("There is not enough such product to buy, sorry");
+            } catch (NoLocationException e) {
+                System.out.println("No such location found.");
+            } catch (NotEnoughCashException e) {
+                System.out.println("There is not enough cash to buy, sorry");
+            }
+            System.out.println("\n");
         }
-
-        // Step 2: Check stock
-        if (!inventoryManager.checkStock(productName)) {
-            System.out.println("Insufficient stock for " + productName);
-            return;
-        }
-
-        // Step 3: Calculate price and shipping
-        Double productPrice = productCatalog.findProduct(productName);
-        double shippingCost = shippingService.calculateShipping(location);
-        double totalCost = productPrice + shippingCost;
-
-        // Step 4: Process payment
-        boolean paymentSuccess = paymentProcessor.processPayment(paymentType, totalCost);
-        if (!paymentSuccess) {
-            System.out.println("Payment failed. Order not completed.");
-            return;
-        }
-
-        // Step 5: Reduce stock and ship product
-        inventoryManager.reduceStock(productName);
-        shippingService.shipProduct(productName);
-
-        System.out.println("Order placed successfully for " + productName + "\n");
+        System.out.println("Thank you for attention and testing!");
     }
 }

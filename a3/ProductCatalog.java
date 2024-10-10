@@ -13,10 +13,11 @@ class ProductCatalog {
         products.put("Headphones", 150.00);
     }
 
-    public Double findProduct(String productName) {
+    public Double getProductPrice(String productName) throws NullPointerException {
         return products.get(productName);
     }
 
+    /////////////////
     public boolean productExists(String productName) {
         return products.containsKey(productName);
     }

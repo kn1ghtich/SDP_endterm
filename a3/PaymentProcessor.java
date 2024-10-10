@@ -1,13 +1,10 @@
 package a3;
 
 class PaymentProcessor {
-    public boolean processPayment(String paymentType, Double amount) {
-        if (amount > 0) {
-            System.out.println(paymentType + " payment of $" + amount + " processed successfully.");
-            return true;
-        } else {
-            System.out.println("Payment failed. Invalid amount.");
-            return false;
+    public void processPayment(Double cash, Double price, int productQuantity, Double deliveryCost) throws NotEnoughCashException {
+        if (cash < price * productQuantity * deliveryCost) {
+            throw new NotEnoughCashException("Not enough cash");
         }
+
     }
 }

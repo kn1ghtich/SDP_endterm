@@ -13,16 +13,13 @@ class InventoryManager {
         stock.put("Headphones", 30);
     }
 
-    public boolean checkStock(String productName) {
-        return stock.getOrDefault(productName, 0) > 0;
-    }
 
-    public void reduceStock(String productName) {
-        if (checkStock(productName)) {
-            stock.put(productName, stock.get(productName) - 1);
-            System.out.println(productName + " stock reduced by 1.");
-        } else {
-            System.out.println(productName + " is out of stock.");
+    public void reduceStock(String productName, int productQuantity) throws NotEnoughProductException {
+        int stockQuantity = stock.get(productName);
+
+        if (stockQuantity < productQuantity ) {
+            throw new NotEnoughProductException("it has been become less than zero");
         }
+        stock.put(productName, stockQuantity - productQuantity);
     }
 }
