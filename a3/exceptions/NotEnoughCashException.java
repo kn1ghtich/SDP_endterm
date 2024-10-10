@@ -1,6 +1,6 @@
-package a3;
+package a3.exceptions;
 
-class NotEnoughCashException extends Exception {
+public class NotEnoughCashException extends Exception {
     public NotEnoughCashException(String message) {
         super(message);
     }

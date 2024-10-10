@@ -1,5 +1,7 @@
 package a3;
 
+import a3.exceptions.NotEnoughProductException;
+
 import java.util.HashMap;
 import java.util.Map;
 

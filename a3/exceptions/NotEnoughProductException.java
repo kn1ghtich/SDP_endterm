@@ -1,6 +1,6 @@
-package a3;
+package a3.exceptions;
 
-class NotEnoughProductException extends Exception {
+public class NotEnoughProductException extends Exception {
     public NotEnoughProductException(String message) {
         super(message);
     }

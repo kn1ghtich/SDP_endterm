@@ -1,5 +1,9 @@
 package a3;
 
+import a3.exceptions.NoLocationException;
+import a3.exceptions.NotEnoughCashException;
+import a3.exceptions.NotEnoughProductException;
+
 import java.util.Scanner;
 
 class ShoppingFacade {
@@ -46,7 +50,9 @@ class ShoppingFacade {
                 System.out.println("It will cost: " + totalPrice);
                 System.out.print("Do you want to continue? (yes/no): ");
                 choice = scanner.nextLine();
-                if (choice.equalsIgnoreCase("no")) {
+                if (choice.equalsIgnoreCase("yes")) {
+                    System.out.println("Processing...");
+                } else {
                     continue;
                 }
 
