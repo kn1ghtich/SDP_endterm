@@ -1,9 +1,9 @@
-package a4_strategies.non_corrects;
+package previous_assignments.a1.a4_strategies.non_corrects;
 
-import a4_strategies.DiscountStrategy;
-import a4_strategies.FareStrategy;
-import a4_strategies.RegularStrategy;
-import a4_strategies.SurgeStrategy;
+import previous_assignments.a1.a4_strategies.DiscountStrategy;
+import previous_assignments.a1.a4_strategies.FareStrategy;
+import previous_assignments.a1.a4_strategies.RegularStrategy;
+import previous_assignments.a1.a4_strategies.SurgeStrategy;
 
 public class RideContext {
     private FareStrategy fareStrategy;

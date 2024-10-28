@@ -1,6 +1,6 @@
-package a3;
+package previous_assignments.a1.a3;
 
-import a3.exceptions.NoLocationException;
+import previous_assignments.a1.a3.exceptions.NoLocationException;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package a4_strategies;
+package previous_assignments.a1.a4_strategies;
 
 public class RideContext_Correct {
     private FareStrategy fareStrategy;

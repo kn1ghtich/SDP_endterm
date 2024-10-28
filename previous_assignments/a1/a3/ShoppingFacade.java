@@ -1,8 +1,8 @@
-package a3;
+package previous_assignments.a1.a3;
 
-import a3.exceptions.NoLocationException;
-import a3.exceptions.NotEnoughCashException;
-import a3.exceptions.NotEnoughProductException;
+import previous_assignments.a1.a3.exceptions.NoLocationException;
+import previous_assignments.a1.a3.exceptions.NotEnoughCashException;
+import previous_assignments.a1.a3.exceptions.NotEnoughProductException;
 
 import java.util.Scanner;
 

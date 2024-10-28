@@ -1,4 +1,4 @@
-package a2;
+package previous_assignments.a1.a2;
 
 public class DatabaseConnection {
 

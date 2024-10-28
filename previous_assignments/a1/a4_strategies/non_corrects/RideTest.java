@@ -1,6 +1,6 @@
-package a4_strategies.non_corrects;
+package previous_assignments.a1.a4_strategies.non_corrects;
 
-import a4_strategies.RegularStrategy;
+import previous_assignments.a1.a4_strategies.RegularStrategy;
 
 public class RideTest {
     public static void main(String[] args) {

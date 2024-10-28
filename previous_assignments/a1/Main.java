@@ -1,4 +1,4 @@
-package a1;
+package previous_assignments.a1;
 
 public class Main {
     public static void main(String[] args) {

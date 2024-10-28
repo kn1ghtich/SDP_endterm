@@ -1,6 +1,6 @@
-package a3;
+package previous_assignments.a1.a3;
 
-import a3.exceptions.NotEnoughCashException;
+import previous_assignments.a1.a3.exceptions.NotEnoughCashException;
 
 class PaymentProcessor {
     //throws exception if cash < total cost

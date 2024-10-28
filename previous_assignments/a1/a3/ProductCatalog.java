@@ -1,4 +1,4 @@
-package a3;
+package previous_assignments.a1.a3;
 
 import java.util.HashMap;
 import java.util.Map;
